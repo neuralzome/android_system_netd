@@ -318,22 +318,22 @@ int TetherController::startTethering(const std::vector<std::string>& dhcpRanges)
 }
 
 int TetherController::stopTethering() {
-    configureForTethering(false);
+    //configureForTethering(false);
 
-    if (mDaemonPid == 0) {
-        ALOGE("Tethering already stopped");
-        return 0;
-    }
+    //if (mDaemonPid == 0) {
+    //    ALOGE("Tethering already stopped");
+    //    return 0;
+    //}
 
-    ALOGD("Stopping tethering services");
+    //ALOGD("Stopping tethering services");
 
-    kill(mDaemonPid, SIGTERM);
-    waitpid(mDaemonPid, nullptr, 0);
-    mDaemonPid = 0;
-    close(mDaemonFd);
-    mDaemonFd = -1;
-    mDnsmasqState.clear();
-    ALOGD("Tethering services stopped");
+    //kill(mDaemonPid, SIGTERM);
+    //waitpid(mDaemonPid, nullptr, 0);
+    //mDaemonPid = 0;
+    //close(mDaemonFd);
+    //mDaemonFd = -1;
+    //mDnsmasqState.clear();
+    ALOGD("Tethering services not being stopped, we need it!");
     return 0;
 }
 
